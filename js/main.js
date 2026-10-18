@@ -117,7 +117,7 @@ function chime(ci,ii){if(!ctx)startAudio();if(!ctx)return;ctx.resume();
 let cat=0,sel=0,n=0;const cats=$('#cats'),list=$('#items'),price=p=>'$'+p.toFixed(2);
 cats.innerHTML=CATS.map((c,i)=>`<button role="tab" data-c="${i}" aria-selected="${i==0}"><span class="ci"><svg viewBox="0 0 24 24">${c.icon}</svg></span>${c.name}</button>`).join('');
 function showCat(i){cat=i;sel=0;$$('#cats button').forEach((b,k)=>b.setAttribute('aria-selected',k==i));$('#catt').textContent=CATS[i].name;
- list.innerHTML=CATS[i].items.map((m,k)=>`<li><button class="it" role="option" data-i="${k}" aria-selected="${k==0}"><span class="th">${art(m[3])}</span><span class="nm">${m[0]}<small>${price(m[2])}</small></span><i>›</i></button></li>`).join('');
+ list.innerHTML=CATS[i].items.map((m,k)=>`<li><button class="it" role="option" data-i="${k}" aria-selected="${k==0}"><span class="th">${art(m[3])}</span><span class="nm">${m[0]}<small>${price(m[2])}</small><span class="ds">${m[1]}</span></span><i>›</i></button></li>`).join('');
  list.scrollTop=0;feature()}
 function feature(){const m=CATS[cat].items[sel],f=$('#feat');f.classList.remove('in');void f.offsetWidth;
  $('#fart').innerHTML=art(m[3]);$('#fname').textContent=m[0];$('#fdesc').textContent=m[1];$('#fprice').textContent=price(m[2]);f.classList.add('in')}
@@ -128,6 +128,8 @@ const addc=$('#addc'),addHTML=addc.innerHTML;
 addc.onclick=()=>{n++;const c=$('#cnt');c.textContent=n;c.style.display='block';addc.classList.add('ok');addc.innerHTML=`Added ${CATS[cat].items[sel][0]} ✓`;
  clearTimeout(addc.t);addc.t=setTimeout(()=>{addc.classList.remove('ok');addc.innerHTML=addHTML},1600)};
 showCat(0);
+// gallery photos load only when the gallery is about to scroll into view
+const gal=$('.gal');if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){gal.classList.add('vis');io.disconnect()}},{rootMargin:'600px'});io.observe(gal)}else gal.classList.add('vis');
 $('#f').onsubmit=e=>{e.preventDefault();$('#ok').textContent='Thank you! We’ll get back to you soon.';e.target.reset()};
 // header + scroll spy
 const ids=['home','menu','about','gallery','contact'];
