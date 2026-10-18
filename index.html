@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oud – More than coffee, it’s a melody</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="bg" aria-hidden="true"><div class="stage" id="stage">
+<div class="l d"></div><div class="l lit"></div><div class="l lute"></div>
+<div class="l pour"><div class="l reveal"></div></div><div class="head"></div><div class="l" id="fx"></div><div class="fade"></div>
+</div><div class="shade"></div></div>
+<header id="hd">
+<a class="logo" href="#home" data-go="home" aria-label="Oud home"><span class="ar">عود</span><span class="en">Oud</span></a>
+<nav><a href="#home" data-go="home" class="on">Home</a><a href="#menu" data-go="menu">Menu</a><a href="#about" data-go="about">About</a><a href="#gallery" data-go="gallery">Gallery</a><a href="#contact" data-go="contact">Contact</a></nav>
+<div class="tools"><button class="pill" id="music" aria-pressed="false" title="Toggle music"><span class="bars"><i></i><i></i><i></i><i></i></span><span class="lbl">Oud Music</span>♪</button>
+<button class="bag" id="bag" aria-label="Cart">🛍<b id="cnt">0</b></button></div>
+</header>
+<main id="home" class="hero"><div>
+<h1>More than coffee…<br>it’s a melody.</h1>
+<p>Good coffee, warm moments, and the sound of oud.</p>
+<button class="cta" id="cta"><span id="ctal">Explore the Menu</span><i>→</i></button>
+</div>
+<button class="scroll" data-go="menu"><span class="mouse"></span><span>Scroll to explore</span></button></main>
+<div id="hint">♪ Tap anywhere to start the music</div>
+<div class="panel">
+<section id="menu"><h2>The Menu</h2><p class="sub">Every cup has its own melody. Tap an item to hear it.</p>
+<div class="mwrap">
+<div class="cats" id="cats" role="tablist" aria-label="Menu categories"></div>
+<div class="list">
+<svg class="oudline" viewBox="0 0 160 640" preserveAspectRatio="none" aria-hidden="true"><path d="M30 0 C 60 60, 70 120, 92 170 C 150 260, 168 420, 120 520 C 96 572, 60 610, 20 640"/><path d="M44 0 C 74 60, 84 120, 106 170 C 162 262, 176 424, 130 526 C 106 578, 72 614, 34 640"/></svg>
+<div class="lhead"><h3 id="catt">Coffee</h3><span>♪ tap to listen</span></div>
+<ul id="items" role="listbox" aria-labelledby="catt"></ul>
+<button class="cartbtn" id="addc"><span>🛍</span> Add to Cart <i>→</i></button>
+</div>
+<div class="feat" id="feat" aria-live="polite"><div class="fart" id="fart"></div><div class="ftxt"><h3 id="fname"></h3><p id="fdesc"></p><b id="fprice"></b></div></div>
+</div></section>
+<section id="about"><h2>Our Story</h2><div class="about"><p>Oud began with a simple idea: that a cup of coffee tastes better when there is music in the room. Our space is built around a giant oud and a golden dallah, the symbols of Arab hospitality and song.</p><p>We roast with care, brew with cardamom the traditional way, and play the classic maqamat all day long. Come for the coffee, stay for the melody.</p></div></section>
+<section id="gallery"><h2>Gallery</h2><p class="sub">A glimpse of the space after dark.</p>
+<div class="gal"><div class="tile" style="background-position:6% 53%">The Oud</div><div class="tile" style="background-position:100% 30%">The Dallah</div><div class="tile" style="background-position:94% 100%">The Majlis</div><div class="tile" style="background-position:35% 67%">The Arches</div></div></section>
+<section id="contact"><h2>Contact</h2><p class="sub">Reserve a table or just say hello.</p>
+<form id="f"><input required placeholder="Your name"><input required type="email" placeholder="Email"><textarea rows="4" required placeholder="Your message"></textarea><button class="cta" style="justify-self:start">Send<i>→</i></button><div id="ok" role="status"></div></form></section>
+</div>
+<footer>© Oud · Good coffee, warm moments, and the sound of oud.</footer>
+<script src="js/main.js"></script>
+</body></html>
